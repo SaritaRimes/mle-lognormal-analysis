@@ -19,7 +19,7 @@ error = cell(4, 4, nIterations); % rows: methods, columns: occupancies
 amplitudes = cell(7, 4, nIterations);
 klDivergence = zeros(4, 4);
 ksStatistic = zeros(4, 4);
-
+%
 klDivergenceGauss = zeros(4, nIterations); % rows: methods, columns: occupancies
 klDivergenceOF2 = zeros(4, nIterations);
 klDivergenceCOF = zeros(4, nIterations);
@@ -28,7 +28,7 @@ ksStatisticGauss = zeros(4, nIterations);
 ksStatisticOF2 = zeros(4, nIterations);
 ksStatisticCOF = zeros(4, nIterations);
 ksStatisticLogn = zeros(4, nIterations);
-
+%
 probabilities = cell(5, 4, nIterations); % rows: methods, columns: occupancies
 chi2 = cell(4, 4, nIterations);
 stdErrorCutsProb = cell(4, 4, nIterations);
@@ -45,8 +45,7 @@ indexOccupancy = 1;
 for oc = occupancy
      
     % Loading the noise and defining the pedestal
-    totalNoise = load(['ruido_media' int2str(mPu) '/ruido_ocup' int2str(oc) '_' ...
-                       int2str(signalsQuantity) 'sinais.txt']);
+    totalNoise = load(['datasets/ruido_ocup' int2str(oc) '_' int2str(signalsQuantity) 'sinais.txt']);
     ped = 50;
 
     % Calculating the number of signals in each dataset
